@@ -3,16 +3,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'rails', '~> 5.2.2'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'cancancan'
-gem 'devise-token_authenticatable'
-gem 'devise'
+
+gem 'puma', '~> 3.11'
 gem 'dotenv-rails'
+gem 'pg'
+gem 'warden'
+gem 'devise'
+gem 'devise-token_authenticatable'
+gem 'cancancan'
 gem 'jbuilder', '~> 2.5'
 gem 'mini_magick', '~> 4.8'
-gem 'pg'
-gem 'puma', '~> 3.11'
-gem 'rails', '~> 5.2.2'
 gem 'rmagick'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
