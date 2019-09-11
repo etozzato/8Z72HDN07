@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <% flash.each do |key, msg| %>
+      <%= content_tag(:div, msg, class: key) %>
+    <% end %>
+    <header>
+      <%= render partial: 'shared/user_menu' %>
+    </header>
     <%= yield %>
   </body>
 </html>
