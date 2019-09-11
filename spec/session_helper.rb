@@ -16,7 +16,22 @@ module SessionHelpers
     fill_in 'Password confirmation', with: password
     click_button 'Sign up'
   end
-  #
+
+  def sign_in(trait=nil)
+    user = build(:user, trait)
+
+    sign_up_with(user.name, user.email, user.password)
+    sign_out
+
+    sign_in_with(user.email, user.password)
+
+    user
+  end
+
+  def sign_out
+    click_link 'Log out'
+  end
+
   # def sign_in
   #   user = create(:user)
   #   visit sign_in_path
