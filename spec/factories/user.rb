@@ -13,7 +13,7 @@ FactoryBot.define do
       transient do
         images_count { 5 }
       end
-      after(:create) do |user, evaluator|
+      after(:build) do |user, evaluator|
         create_list(:image, evaluator.images_count, user: user)
       end
     end

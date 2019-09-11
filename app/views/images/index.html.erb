@@ -1,4 +1,5 @@
-<ul>
-  <li>You have <%= pluralize(@images.count, 'image') %></li>
-  <li> <%= link_to 'upload an image', new_image_path %> </li>
-</ul>
+<%= react_component("ImagePaginator", {
+  total: @images.count,
+  page: params[:page],
+  upload_url: new_image_path
+}) %>

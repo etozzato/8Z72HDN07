@@ -1,0 +1,5 @@
+<%= react_component("ImageUploader", {
+  total: @images.count,
+  images_url: images_path,
+  authenticity_token: form_authenticity_token
+}) %>

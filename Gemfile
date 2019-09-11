@@ -15,11 +15,13 @@ gem 'mini_magick', '~> 4.8'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.2'
+gem 'react-rails'
 gem 'rmagick'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'warden'
+gem 'webpacker'
 
 group :development, :test do
   gem 'bullet'

@@ -18,11 +18,7 @@ module SessionHelpers
   end
 
   def sign_in(trait=nil)
-    user = build(:user, trait)
-
-    sign_up_with(user.name, user.email, user.password)
-    sign_out
-
+    user = create(:user, trait)
     sign_in_with(user.email, user.password)
 
     user
@@ -31,12 +27,4 @@ module SessionHelpers
   def sign_out
     click_link 'Log out'
   end
-
-  # def sign_in
-  #   user = create(:user)
-  #   visit sign_in_path
-  #   fill_in 'Email', with: user.email
-  #   fill_in 'Password', with: user.password
-  #   click_button 'Sign in'
-  # end
 end
