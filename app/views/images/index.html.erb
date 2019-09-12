@@ -1,5 +1,3 @@
-<%= react_component("ImagePaginator", {
-  total: @images.count,
-  page: params[:page],
-  upload_url: new_image_path
-}) %>
+<%= react_component 'ImageViewer',
+  render( template: 'images/images.json.jbuilder', locals: { images: @images})
+%>

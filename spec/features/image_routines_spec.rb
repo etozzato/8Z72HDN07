@@ -64,11 +64,22 @@ feature 'Image functionality', js: true do
       visit new_image_path
 
       expect(page).to have_content 'You have 0 images'
-      
+
       fill_in 'name', with: 'Image 002'
       attach_file 'file', Rails.root + 'spec/fixtures/image2.jpg'
 
       expect(page).to have_content 'You have 1 images'
+    end
+
+    it 'uploads an image, displays the name and a thumbnail of the image' do
+      sign_in
+      visit new_image_path
+
+      fill_in 'name', with: 'Image 003'
+      attach_file 'file', Rails.root + 'spec/fixtures/image3.jpg'
+
+      expect(page).to have_content 'Name: Image 003'
+      expect(page).to have_selector 'img.thumbnail'
     end
   end
 end

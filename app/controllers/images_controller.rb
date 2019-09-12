@@ -21,6 +21,6 @@ class ImagesController < ApplicationController
     end
 
     def load_images
-      @images = current_user.images
+      @images = current_user.images.order('created_at DESC')
     end
 end
