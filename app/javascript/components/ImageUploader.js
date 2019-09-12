@@ -15,7 +15,8 @@ class ImageUploader extends React.Component {
         </ul>
         <div>
 
-          <input type='file' onChange={(event)=> { this.readFile(event.target.files) }} accept="image/png, image/jpeg"></input>
+          <input type='text' name='name' onChange={(event)=> { this.setState({name: event.target.value}) }} />
+          <input type='file' onChange={(event)=> { this.readFile(event.target.files) }} accept="image/png, image/jpeg" />
         </div>
       </React.Fragment>
     );
@@ -23,8 +24,9 @@ class ImageUploader extends React.Component {
   readFile(fileList) {
     if (fileList && fileList[0]) {
       let formPayLoad = new FormData();
-      formPayLoad.append('uploaded_image', fileList[0]);
+      formPayLoad.append('file', fileList[0]);
       formPayLoad.append('authenticity_token', this.props.authenticity_token);
+      formPayLoad.append('name', this.state.name);
       this.uploadToServer(formPayLoad)
     }
   }
@@ -43,6 +45,6 @@ class ImageUploader extends React.Component {
 ImageUploader.propTypes = {
   total: PropTypes.node,
   images_url: PropTypes.node,
-  authenticity_token: PropTypes.node
+  authenticity_token: PropTypes.node,
 };
 export default ImageUploader
