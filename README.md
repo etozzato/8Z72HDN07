@@ -1,24 +1,21 @@
-# README
+# README for z72hdn07
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development Setup
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+## Deployment (HEROKU)
 
-* Configuration
+```
+$ heroku create z72hdn07
 
-* Database creation
+$ heroku git:remote -a z72hdn07
 
-* Database initialization
+$ heroku buildpacks:set heroku/ruby -a z72hdn07
 
-* How to run the test suite
+$ heroku buildpacks:set heroku/nodejs -a z72hdn07
 
-* Services (job queues, cache servers, search engines, etc.)
+$ heroku addons:create heroku-postgresql:hobby-dev -a z72hdn07
 
-* Deployment instructions
-
-* ...
+$ git push heroku master
+```

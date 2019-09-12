@@ -24,6 +24,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'warden'
 gem 'webpacker'
 
+group :production do
+  gem 'aws-sdk-s3', require: false
+end
+
 group :development, :test do
   gem 'bullet'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
